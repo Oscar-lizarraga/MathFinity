@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathFinity.API", "MathFinity.API\MathFinity.API.csproj", "{DC2B26D0-B38D-4219-84EA-1D75D92A29F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathFinity.BOL", "MathFinity.BOL\MathFinity.BOL.csproj", "{9DB677D2-CACA-4360-BBE8-831C6B5E544A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathFinity.DAL", "MathFinity.DAL\MathFinity.DAL.csproj", "{A7579926-27AA-432C-8C54-6C3ADCDCC89E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathFinity.WEB", "MathFinity.WEB\MathFinity.WEB.csproj", "{47B001C1-90D2-472B-A815-A9BB2A540508}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC2B26D0-B38D-4219-84EA-1D75D92A29F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2B26D0-B38D-4219-84EA-1D75D92A29F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2B26D0-B38D-4219-84EA-1D75D92A29F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2B26D0-B38D-4219-84EA-1D75D92A29F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DB677D2-CACA-4360-BBE8-831C6B5E544A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DB677D2-CACA-4360-BBE8-831C6B5E544A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DB677D2-CACA-4360-BBE8-831C6B5E544A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DB677D2-CACA-4360-BBE8-831C6B5E544A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7579926-27AA-432C-8C54-6C3ADCDCC89E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7579926-27AA-432C-8C54-6C3ADCDCC89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7579926-27AA-432C-8C54-6C3ADCDCC89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7579926-27AA-432C-8C54-6C3ADCDCC89E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47B001C1-90D2-472B-A815-A9BB2A540508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B001C1-90D2-472B-A815-A9BB2A540508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47B001C1-90D2-472B-A815-A9BB2A540508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B001C1-90D2-472B-A815-A9BB2A540508}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
