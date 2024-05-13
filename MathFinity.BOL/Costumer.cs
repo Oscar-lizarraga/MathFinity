@@ -2,20 +2,19 @@
 
 namespace MathFinity.BOL;
 
-public class Costumer
+public class Customer
 {
 
 
-    public int costumerID { get; set; }
+    public string customerID { get; set; } = null!;
 
     [Required(ErrorMessage = "El campo {0} es necesario")]
+    public int interestID { get; set; }
+
     public string address { get; set; } = null!;
 
-    [Required(ErrorMessage = "El campo {0} es necesario")]
-    [Phone(ErrorMessage = "El campo {0} debe ser un numero valido")]
     public string phone { get; set; } = null!;
 
-    [Required(ErrorMessage = "El campo {0} es necesario")]
     public DateTime dateCreate { get; set; }
 
 

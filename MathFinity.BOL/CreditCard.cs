@@ -3,7 +3,7 @@
 public class CreditCard
 {
     
-    
+    public string accountNumber { get; set; } = null!;
     
     public string cardNumber { get; set; } = null!;
     
@@ -13,11 +13,15 @@ public class CreditCard
 
     public DateTime issueDate { get; set; }
 
-    public DateTime expiryDate { get; set; }
+    public DateTime expireDate { get; set; }
 
     public DateTime dueDate { get; set; }   
 
     public float creditLimit { get; set; }
+
+    public string CVV { get; set; } = null!;
+
+    public string NIP { get; set; } = null!;
 
     
 

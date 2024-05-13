@@ -1,16 +1,57 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+<div>
+    <RadzenLayout Style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body'">
+        
+        <RadzenHeader>
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
+                <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
+                <RadzenLabel Text="Header" />
+            </RadzenStack>
+        </RadzenHeader>
+        
+        <RadzenSidebar @bind-Expanded="@sidebarExpanded" >
+            <RadzenPanelMenu>
+                <ChildContent>
+                    <RadzenPanelMenuItem Text="Home" Icon="home" Path="/"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Prospectos" Icon="account_box" Path="/ProspectMenu" ></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Transacciones" Icon="account_box" Path="/Transaction" ></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Empleados" Icon="account_box" Path="/Employee" ></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="" Icon="account_box" Path="/Shipment"></RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Sucursales" Icon="account_box" Path="/BranchMenu">
+                        <ChildContent>
+                            <RadzenPanelMenuItem Text="ATM" Icon="account_box" Path="/BranchMenu" ></RadzenPanelMenuItem>
+                        </ChildContent>
+                    </RadzenPanelMenuItem>
+
+                    @* Para otros tipos de usuarios *@  
+                    <RadzenPanelMenuItem Text="Clientes" Icon="account_box" Path="/CustomerMenu">
+                        <ChildContent>
+                            <RadzenPanelMenuItem Text="Departamentos" Icon="account_box" Path="/DepartmentMenu" ></RadzenPanelMenuItem>
+                        </ChildContent>
+                    </RadzenPanelMenuItem>
+                    <RadzenPanelMenuItem Text="Asesores" Icon="account_box" Path="/DelegateMenu"></RadzenPanelMenuItem>                   
+                </ChildContent>
+
+            </RadzenPanelMenu>
+
+
+            <div class="rz-p-4">
+                Sidebar
+            </div>
+        </RadzenSidebar>
+        
+        <RadzenBody>
+            <div class="rz-p-4">
+                @Body
+            </div>
+        </RadzenBody>
+
+    </RadzenLayout>
+    <RadzenComponents/>
 </div>
+
+@code {
+    bool sidebarExpanded = true;
+}

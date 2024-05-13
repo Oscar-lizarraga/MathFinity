@@ -8,4 +8,7 @@ public class ATM
 
     [Required(ErrorMessage = "El campo {0} es necesario")]
     public float cashInBox { get; set; }
+
+    [Required(ErrorMessage = "El campo{0} es necesario")]
+    public int branchID { get; set; }
 }

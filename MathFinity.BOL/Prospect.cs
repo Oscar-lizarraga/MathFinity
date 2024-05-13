@@ -42,7 +42,7 @@ public class Prospect
 
     [Range(0,1, ErrorMessage = "El campo {0} solo puede tomar valores des de {1} hasta {2}")]
     [Required(ErrorMessage = "El campo {0} es necesario")]
-    public int bankCostumer { get; set; }
+    public int bankCustomer { get; set; }
 
 
 
@@ -71,7 +71,7 @@ public class Prospect
 
 
     [Required(ErrorMessage = "El campo {0} es necesario")]
-    public string citizien { get; set; } = null!;
+    public string citizen { get; set; } = null!;
 
 
 

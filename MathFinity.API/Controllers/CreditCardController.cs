@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MathFinity.BOL;
+using MathFinity.DAL;
 
 namespace MathFinity.API;
 
@@ -6,27 +8,29 @@ namespace MathFinity.API;
 [Route("api/[controller]")]
 public class CreditCardController : ControllerBase
 {
-    [HttpGet]
-    public IActionResult GetAllBranch()
+    [HttpGet] 
+    public async Task<IActionResult> GetAllCreditCardsAsync()
     {
-        return Ok();
-    }
-    
-    [HttpPost]
-    public IActionResult PostBranch()
-    {
-        return Ok();
-    }
-
-    [HttpDelete]
-    public IActionResult DeleteBranch()
-    {
-        return Ok();
+        try 
+        {
+            return Ok(await DALCreditCard.CreditCardGetAllAsync());
+        }
+        catch(System.Exception ex)
+        {
+            return StatusCode(500, $"Error al obtener los datos de los empledos {ex.Message}");
+        }
     }
 
-    [HttpPut]
-    public IActionResult PutBranch()
+    [HttpGet("{id}")] 
+    public async Task<IActionResult> GetByIdCreditCardAsync(string id)
     {
-        return Ok();
+        try 
+        {
+            return Ok(await DALCreditCard.CreditCardGetByIdAsync(id));
+        }
+        catch(System.Exception ex)
+        {
+            return StatusCode(500, $"Error al obtener los datos de los empledos {ex.Message}");
+        }
     }
 }

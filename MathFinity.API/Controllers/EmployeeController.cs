@@ -8,31 +8,46 @@ namespace MathFinity.API;
 [Route("api/[Controller]")]
 public class Employee : ControllerBase
 {
-    [HttpPut]
-    public async Task<IActionResult> PutEmployeeAsync()
+    // [HttpPut]
+    // public async Task<IActionResult> PutEmployeeAsync()
+    // {
+    //     try
+    //     {
+    //         List<MathFinity.BOL.Employee> employees = await DALEmployee.GetAllEmployessAsync();
+    //         return Ok(employees);
+    //     }
+    //     catch (System.Exception)
+    //     {
+    //         return StatusCode(500, "Bad Request");
+    //     }
+    // }
+
+    [HttpGet] 
+    public async Task<IActionResult> GetAllEmployeesAsync()
     {
-        try
+        try 
         {
-            List<MathFinity.BOL.Employee> employees = await DALEmployee.EmployeeGetAllAsync();
-            return Ok(employees);
+            return Ok(await DALEmployee.GetAllEmployessAsync());
         }
-        catch (System.Exception)
+        catch(System.Exception ex)
         {
-            return StatusCode(500, "Bad Request");
+            return StatusCode(500, $"Error al obtener los datos de los empledos {ex.Message}");
+
         }
     }
 
-    // [HttpGet] 
-    // public async Task<IActionResult> GetAllEmployeesAsync()
-    // {
-    //     return Ok();
-    // }
+    [HttpGet("{id:int}")] 
+    public async Task<IActionResult> GetEmployeesById(int id)
+    {
+        try 
+        {
+            return Ok(await DALEmployee.GetEmployeeByIdAsync(id));
+        }
+        catch(System.Exception ex)
+        {
+            return StatusCode(500, $"Error al obtener los datos de los empledos {ex.Message}");
 
-
-    // [HttpDelete]
-    // public async Task<IActionResult> DeleteEmployee()
-    // {
-    //     return Ok();
-    // }
+        }
+    }
 
 }
